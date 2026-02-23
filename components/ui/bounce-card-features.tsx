@@ -81,7 +81,7 @@ function BounceCardContent({ card }: { card: CardItem }) {
 
 export function BouncyCardsFeatures({ onCTAClick }: BouncyCardsFeaturesProps) {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-12">
+    <section className="w-full py-12 px-4 lg:px-0">
       <div className="mb-8 md:px-4">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <h2 className="max-w-lg whitespace-nowrap text-3xl font-bold text-foreground md:text-4xl">

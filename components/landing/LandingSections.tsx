@@ -80,14 +80,14 @@ export function LandingSections({ onCTAClick }: LandingSectionsProps) {
 
       {/* Use Cases / Discover - Bouncy Cards */}
       <section id="discover" className="py-20 px-6 bg-card/30 scroll-mt-24">
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-auto w-full max-w-[1152px] px-4 lg:px-0">
           <BouncyCardsFeatures onCTAClick={onCTAClick} />
         </div>
       </section>
 
       {/* How It Works */}
       <section id="how-it-works" className="py-24 px-6 overflow-hidden scroll-mt-24">
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto w-full max-w-[1152px] px-4 lg:px-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
