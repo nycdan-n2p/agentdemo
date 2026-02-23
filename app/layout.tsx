@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Unbounded, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -32,6 +33,12 @@ export default function RootLayout({
       </head>
       <body className={`${unbounded.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
+        <Script
+          src="https://userstory.net2phone.com/static/tracker/tracker.js"
+          data-project-key="pk_5AaUb1IM1jyeQ_ywgZWpGXqC4nfhwojexjcwtPvJU7k"
+          data-api-url="https://userstory.net2phone.com"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
