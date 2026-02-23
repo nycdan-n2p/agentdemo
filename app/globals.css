@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Sans — подключаем напрямую из public */
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans/GoogleSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans/GoogleSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans/GoogleSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Google Sans";
+  src: url("/fonts/GoogleSans/GoogleSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #f8f8f8;
+  --foreground: #222222;
+  --card: #ffffff;
+  --primary: #000000;
+  --primary-foreground: #ffffff;
+  --secondary: #22c55e;
+  --secondary-foreground: #0a0a0f;
+  --muted: #666666;
+  --muted-foreground: #666666;
+  --accent: #eeeeee;
+  --accent-foreground: #222222;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #dddddd;
+  --input: #dddddd;
+  --ring: #000000;
+  --ring-offset: #f8f8f8;
+  --font-sans: "Google Sans", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Google Sans", system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-unbounded), system-ui, sans-serif;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #222222 0%, #444444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Чипы: без границы и обводки */
+[data-chip-no-stroke],
+.chip-no-stroke {
+  border: none !important;
+  border-width: 0 !important;
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+[data-chip-no-stroke]:focus,
+[data-chip-no-stroke]:focus-visible,
+.chip-no-stroke:focus,
+.chip-no-stroke:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
