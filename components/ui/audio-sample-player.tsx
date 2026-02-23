@@ -67,7 +67,7 @@ export function AudioSamplePlayer({
       audio.removeEventListener("loadeddata", handleLoadedData);
       audio.removeEventListener("ended", handleEnded);
     };
-  }, [src, onEndedProp]);
+  }, [src, onEndedProp, isControlled]);
 
   useEffect(() => {
     if (controlledPlaying !== undefined && !controlledPlaying) {

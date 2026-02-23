@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Unbounded, JetBrains_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { AnimatedFavicon } from "@/components/AnimatedFavicon";
 import "./globals.css";
 
 const unbounded = Unbounded({
@@ -28,11 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="0" />
       </head>
       <body className={`${unbounded.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+        <AnimatedFavicon />
         {children}
         <Footer />
         <Script

@@ -6,14 +6,16 @@ const FOOTER_LINKS_ROW1 = [
   { label: "Cookie Notice", href: "https://www.net2phone.com/privacy-policy" },
 ] as const;
 
-const FOOTER_LINKS_ROW2 = [
+type FooterLink = { label: string; href: string; external?: boolean };
+
+const FOOTER_LINKS_ROW2: FooterLink[] = [
   { label: "Privacy Notice for California Consumers", href: "https://www.net2phone.com/ccpa-notice" },
   {
     label: "Your California Privacy Choices",
     href: "https://www.idt.net/ccpa-do-not-sell/",
     external: true,
   },
-] as const;
+];
 
 export function Footer() {
   return (
