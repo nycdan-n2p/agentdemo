@@ -36,16 +36,16 @@ export function Footer() {
 
         {/* Row 2: California links */}
         <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm">
-          {FOOTER_LINKS_ROW2.map(({ label, href, external }) => (
+          {FOOTER_LINKS_ROW2.map((item) => (
             <a
-              key={label}
-              href={href}
-              {...(external
+              key={item.label}
+              href={item.href}
+              {...("external" in item && item.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
               className="text-neutral-600 hover:text-foreground hover:underline transition-colors"
             >
-              {label}
+              {item.label}
             </a>
           ))}
         </div>
