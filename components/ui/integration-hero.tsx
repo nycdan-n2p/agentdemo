@@ -33,7 +33,7 @@ interface IntegrationHeroProps {
 
 export default function IntegrationHero({ onCTAClick }: IntegrationHeroProps) {
   return (
-    <section className="relative py-32 overflow-hidden bg-background">
+    <section id="integrations" className="relative py-32 overflow-hidden bg-background scroll-mt-24">
       {/* Light grid background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:24px_24px]" />
 

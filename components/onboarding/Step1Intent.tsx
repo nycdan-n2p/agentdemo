@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChipSelector } from "@/components/ui/ChipSelector";
+import { OnboardingNavButtons } from "./OnboardingNavButtons";
 
 interface Step1IntentProps {
   intent: string;
@@ -64,14 +65,11 @@ export function Step1Intent({ intent, onIntentChange, onNext }: Step1IntentProps
         />
       </div>
 
-      <div className="flex justify-end">
-        <button
-          onClick={onNext}
-          className="px-6 py-3 rounded-2xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
-        >
-          Next: Pick your tools →
-        </button>
-      </div>
+      <OnboardingNavButtons
+        onNext={onNext}
+        nextLabel="Next: Pick your tools"
+        showBack={false}
+      />
     </motion.div>
   );
 }

@@ -66,6 +66,7 @@ export default function Home() {
       <AnimatePresence mode="wait">
         {!showOnboarding ? (
           <motion.div
+            id="agent-start"
             key="hero"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}

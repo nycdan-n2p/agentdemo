@@ -1,8 +1,10 @@
 "use client";
 
+import React from "react";
 import { Check } from "lucide-react";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { CreditBadge } from "@/components/ui/CreditBadge";
+import { ONBOARDING_CONTENT_CONTAINER, MAIN_HEADER_CONTAINER } from "@/lib/utils";
 
 interface OnboardingShellProps {
   children: React.ReactNode;
@@ -25,64 +27,85 @@ export function OnboardingShell({
       <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
 
       <header className="relative sticky top-0 z-40 h-14 border-b border-white/10 bg-black">
-        <div className="flex items-center h-full px-4 sm:px-6 max-w-6xl mx-auto gap-6">
-          {/* Logo — такой же, как на лендинге */}
-          <a href="/" className="flex shrink-0 items-center gap-2">
+        <div className={`grid items-center h-full gap-4 ${MAIN_HEADER_CONTAINER}`} style={{ gridTemplateColumns: "1fr 720px 1fr" }}>
+          {/* Left zone: logo */}
+          <a
+            href="/"
+            className="flex shrink-0 items-center gap-2 justify-self-start"
+          >
             <span className="font-heading text-lg font-semibold text-white sm:text-xl">Flex</span>
             <span className="font-sans text-sm text-white/80 sm:text-base">by net2phone</span>
           </a>
-
-          {/* Stepper */}
+          {/* Center zone: exactly 720px, stepper fills it edge-to-edge */}
           {showCreditBadge ? (
-            <div className="flex flex-1 justify-end">
+            <div />
+          ) : (
+            <div className="flex min-h-0 min-w-0 items-center overflow-hidden">
+              <div
+                data-stepper-track
+                className="flex w-full items-center px-0"
+              >
+              {Array.from({ length: totalSteps }, (_, i) => {
+                const step = i + 1;
+                const isCompleted = step < currentStep;
+                const isCurrent = step === currentStep;
+                const nextStep = step + 1;
+                const connectorIsCompletedPath = nextStep <= currentStep;
+                const isLastStep = i === totalSteps - 1;
+                return (
+                  <React.Fragment key={step}>
+                    <div
+                      className={`relative flex h-6 w-6 shrink-0 flex-none items-center justify-center rounded-full transition-colors ${
+                        isCompleted
+                          ? "bg-white"
+                          : isCurrent
+                            ? "border-2 border-white bg-transparent"
+                            : "border border-gray-400 bg-transparent"
+                      }`}
+                      aria-current={isCurrent ? "step" : undefined}
+                    >
+                      {isCompleted ? (
+                        <Check className="h-3 w-3 text-black" strokeWidth={2.5} />
+                      ) : isCurrent ? (
+                        <span className="text-xs font-medium text-white leading-none">{step}</span>
+                      ) : (
+                        <span className="text-xs font-medium text-gray-400">{step}</span>
+                      )}
+                    </div>
+                    {!isLastStep && (
+                      <div
+                        className={`relative h-0.5 min-w-1 flex-1 overflow-hidden rounded-full mx-0.5 ${
+                          connectorIsCompletedPath ? "bg-white" : "bg-gray-400"
+                        }`}
+                      />
+                    )}
+                  </React.Fragment>
+                );
+              })}
+              </div>
+            </div>
+          )}
+          {/* Right zone: empty or CreditBadge */}
+          {showCreditBadge ? (
+            <div className="flex justify-end justify-self-end">
               <CreditBadge />
             </div>
           ) : (
-            <div className="flex flex-1 min-w-0 items-center">
-              <div className="flex w-full items-center">
-                {Array.from({ length: totalSteps }, (_, i) => {
-                  const step = i + 1;
-                  const isCompleted = step < currentStep;
-                  const isCurrent = step === currentStep;
-                  return (
-                    <div key={step} className="flex flex-1 min-w-0 items-center">
-                      <div
-                        className={`relative flex h-5 w-5 shrink-0 items-center justify-center rounded-full transition-colors ${
-                          isCompleted
-                            ? "bg-white"
-                            : isCurrent
-                              ? "border-2 border-white bg-transparent"
-                              : "bg-white/20"
-                        }`}
-                        aria-current={isCurrent ? "step" : undefined}
-                      >
-                        {isCompleted ? (
-                          <Check className="h-2.5 w-2.5 text-black" strokeWidth={2.5} />
-                        ) : null}
-                      </div>
-                      {step < totalSteps && (
-                        <div className="relative h-0.5 flex-1 min-w-1 mx-0.5 overflow-hidden rounded-full bg-white/20">
-                          <div
-                            className="absolute inset-y-0 left-0 rounded-full bg-white transition-all duration-300 ease-out"
-                            style={{ width: isCompleted ? "100%" : "0%" }}
-                          />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+            <div />
           )}
         </div>
       </header>
 
-      <main
-        className={`mx-auto px-6 py-12 bg-background ${
-          currentStep === 5 ? "max-w-6xl" : "max-w-3xl"
-        }`}
-      >
-        {children}
+      <main className="py-12 bg-background">
+        <div
+          className={
+            currentStep === 5
+              ? "max-w-6xl mx-auto px-6"
+              : ONBOARDING_CONTENT_CONTAINER
+          }
+        >
+          {children}
+        </div>
       </main>
     </div>
   );

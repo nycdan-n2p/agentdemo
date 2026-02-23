@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChipSelector } from "@/components/ui/ChipSelector";
+import { OnboardingNavButtons } from "./OnboardingNavButtons";
 
 interface Question {
   id: string;
@@ -193,20 +194,7 @@ export function Step3Questions({
         ))}
       </div>
 
-      <div className="flex justify-between">
-        <button
-          onClick={onBack}
-          className="px-6 py-3 rounded-xl border border-[#EFEFEF] text-muted-foreground hover:bg-[#EFEFEF] hover:text-foreground font-medium"
-        >
-          ← Back
-        </button>
-        <button
-          onClick={onNext}
-          className="px-6 py-3 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
-        >
-          Next →
-        </button>
-      </div>
+      <OnboardingNavButtons onBack={onBack} onNext={onNext} />
     </motion.div>
   );
 }

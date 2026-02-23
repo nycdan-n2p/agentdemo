@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { MAIN_HEADER_CONTAINER } from "@/lib/utils";
 
 const NavLink = ({
   href,
@@ -22,13 +23,13 @@ export function Navbar() {
 
   const navLinksData = [
     { label: "Discover", href: "#discover" },
-    { label: "How it works", href: "#how-it-works" },
+    { label: "Integrations", href: "#integrations" },
     { label: "Features", href: "#features" },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 bg-black backdrop-blur-sm">
-      <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className={`flex h-14 w-full items-center justify-between gap-4 ${MAIN_HEADER_CONTAINER}`}>
         {/* Слева — название */}
         <a href="/" className="flex shrink-0 items-center gap-2">
           <span className="font-heading text-lg font-semibold text-white sm:text-xl">Flex</span>
@@ -43,7 +44,7 @@ export function Navbar() {
             </NavLink>
           ))}
           <a
-            href="#discover"
+            href="#agent-start"
             className="ml-2 shrink-0 rounded-[10px] bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-white/90"
           >
             Start for free
@@ -53,7 +54,7 @@ export function Navbar() {
         {/* Мобильное меню */}
         <div className="flex items-center gap-2 sm:hidden">
           <a
-            href="#discover"
+            href="#agent-start"
             className="rounded-[10px] bg-white px-3 py-1.5 text-xs font-medium text-black"
           >
             Start for free

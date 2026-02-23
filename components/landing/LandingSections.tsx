@@ -58,8 +58,8 @@ export function LandingSections({ onCTAClick }: LandingSectionsProps) {
       <AudioSamplesSection />
 
       {/* Value Prop / Manifesto */}
-      <section id="manifesto" className="py-20 px-0 scroll-mt-24">
-        <div className="w-full text-center">
+      <section id="manifesto" className="py-20 px-6 scroll-mt-24">
+        <div className="max-w-[1152px] w-full mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -171,7 +171,9 @@ export function LandingSections({ onCTAClick }: LandingSectionsProps) {
               and deploys with a real phone number
             </p>
             <button
-              onClick={onCTAClick}
+              onClick={() => {
+                document.getElementById("agent-start")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="px-8 py-4 rounded-[20px] bg-white hover:bg-neutral-200 text-black font-semibold text-lg flex items-center gap-2 mx-auto transition-colors"
             >
               <Link2 className="w-5 h-5" />

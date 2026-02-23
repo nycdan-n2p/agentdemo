@@ -82,24 +82,24 @@ function BounceCardContent({ card }: { card: CardItem }) {
 export function BouncyCardsFeatures({ onCTAClick }: BouncyCardsFeaturesProps) {
   return (
     <section className="mx-auto max-w-7xl px-4 py-12">
-      <div className="mb-8 flex flex-col items-start gap-4 md:flex-row md:items-start md:justify-between md:px-4">
-        <div>
+      <div className="mb-8 md:px-4">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <h2 className="max-w-lg whitespace-nowrap text-3xl font-bold text-foreground md:text-4xl">
             One agent.<span className="text-muted-foreground"> Every use case</span>
           </h2>
-          <p className="mt-3 max-w-xl text-muted-foreground">
-            Inbound calls, scheduling, after-hours support, call routing — Flex
-            agents handle the work so your team can focus
-          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={onCTAClick}
+            className="shrink-0 whitespace-nowrap rounded-lg bg-primary px-4 py-2 font-medium text-primary-foreground shadow-xl transition-colors hover:bg-primary/90"
+          >
+            Get started
+          </motion.button>
         </div>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={onCTAClick}
-          className="shrink-0 whitespace-nowrap rounded-lg bg-primary px-4 py-2 font-medium text-primary-foreground shadow-xl transition-colors hover:bg-primary/90 md:ml-auto"
-        >
-          Get started
-        </motion.button>
+        <p className="mt-3 max-w-xl text-muted-foreground">
+          Inbound calls, scheduling, after-hours support, call routing — Flex
+          agents handle the work so your team can focus
+        </p>
       </div>
       <div className="mb-4 grid grid-cols-12 gap-4">
         <BounceCard className="col-span-12 md:col-span-4">

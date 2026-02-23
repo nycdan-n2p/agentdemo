@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { OnboardingNavButtons } from "./OnboardingNavButtons";
 
 interface Step4AccountProps {
   formData: {
@@ -393,15 +394,7 @@ export function Step4Account({
         </p>
       </form>
 
-      <div className="flex justify-start">
-        <button
-          type="button"
-          onClick={onBack}
-          className="px-6 py-3 rounded-xl border border-[#EFEFEF] text-muted-foreground hover:bg-[#EFEFEF] hover:text-foreground font-medium"
-        >
-          ← Back
-        </button>
-      </div>
+      <OnboardingNavButtons onBack={onBack} showNext={false} />
     </motion.div>
   );
 }
