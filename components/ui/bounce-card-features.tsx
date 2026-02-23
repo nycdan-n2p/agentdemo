@@ -84,8 +84,8 @@ export function BouncyCardsFeatures({ onCTAClick }: BouncyCardsFeaturesProps) {
     <section className="w-full py-12 px-4 lg:px-0">
       <div className="mb-8 md:px-4">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-          <h2 className="max-w-lg whitespace-nowrap text-3xl font-bold text-foreground md:text-4xl">
-            One agent.<span className="text-muted-foreground"> Every use case</span>
+          <h2 className="max-w-lg whitespace-nowrap text-[36px] font-bold leading-[1.2] text-[#111111]">
+            One agent.<span className="text-[#6B6B6B]"> Every use case</span>
           </h2>
           <motion.button
             whileHover={{ scale: 1.05 }}

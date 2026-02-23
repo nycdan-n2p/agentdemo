@@ -42,10 +42,10 @@ export function AudioSamplesSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-[36px] font-bold leading-[1.2] text-[#111111] mb-4">
             Hear what your agent sounds like
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg font-normal leading-[1.5] text-[#6B6B6B] max-w-2xl mx-auto">
             Real conversations. Real AI. These are Flex agents handling live
             scenarios — judge for yourself
           </p>

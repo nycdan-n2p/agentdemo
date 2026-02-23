@@ -95,10 +95,10 @@ export function LandingSections({ onCTAClick }: LandingSectionsProps) {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-[36px] font-bold leading-[1.2] text-[#111111] mb-4">
               Three steps. One agent. Fully deployed
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto whitespace-nowrap">
+            <p className="text-lg font-normal leading-[1.5] text-[#6B6B6B] max-w-xl mx-auto whitespace-nowrap">
               From idea to live agent with a real phone number — no engineers required
             </p>
           </motion.div>
@@ -121,10 +121,10 @@ export function LandingSections({ onCTAClick }: LandingSectionsProps) {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-[36px] font-bold leading-[1.2] text-[#111111] mb-4">
               Enterprise power. Zero complexity
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg font-normal leading-[1.5] text-[#6B6B6B] max-w-2xl mx-auto">
               Every feature your team needs to handle calls and chats at scale — nothing you don&apos;t
             </p>
           </motion.div>
@@ -155,7 +155,7 @@ export function LandingSections({ onCTAClick }: LandingSectionsProps) {
       <ClientFeedback />
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-black rounded-t-[40px]">
+      <section className="py-10 px-6 bg-black">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -163,10 +163,10 @@ export function LandingSections({ onCTAClick }: LandingSectionsProps) {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            <h2 className="text-[36px] font-bold leading-[1.2] text-white mb-2">
               Your agent is 4 minutes away
             </h2>
-            <p className="text-neutral-300 mb-8">
+            <p className="text-lg font-normal leading-[1.5] text-white/75 mb-4">
               Describe what you need. Flex builds the agent, wires integrations,
               and deploys with a real phone number
             </p>

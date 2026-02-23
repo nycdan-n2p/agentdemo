@@ -33,7 +33,7 @@ function ClientFeedback() {
         <article className="max-w-screen-md mx-auto text-center space-y-2">
           <TimelineContent
             as="h1"
-            className="xl:text-4xl text-3xl font-medium"
+            className="text-[36px] font-bold leading-[1.2] text-[#111111] whitespace-nowrap"
             animationNum={0}
             customVariants={revealVariants}
             timelineRef={testimonialRef}
@@ -42,7 +42,7 @@ function ClientFeedback() {
           </TimelineContent>
           <TimelineContent
             as="p"
-            className="mx-auto text-muted-foreground"
+            className="mx-auto text-lg font-normal leading-[1.5] text-[#6B6B6B]"
             animationNum={1}
             customVariants={revealVariants}
             timelineRef={testimonialRef}
